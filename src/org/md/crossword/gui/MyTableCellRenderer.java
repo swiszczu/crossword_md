@@ -11,12 +11,12 @@ import java.awt.*;
  *         Date: 29.11.13
  *         Time: 11:43
  */
-public class GtTableCellRenderer extends DefaultTableCellRenderer {
+public class MyTableCellRenderer extends DefaultTableCellRenderer {
 
     /**
      * Instantiates a new gt table cell renderer.
      */
-    public GtTableCellRenderer() {
+    public MyTableCellRenderer() {
         setHorizontalAlignment(JLabel.CENTER);
     }
 

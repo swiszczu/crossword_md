@@ -10,10 +10,10 @@ import java.awt.*;
  *         Date: 29.11.13
  *         Time: 11:43
  */
-public class GtTableEmptyCellRenderer extends GtTableCellRenderer {
+public class MyTableEmptyCellRenderer extends MyTableCellRenderer {
 
     /* (non-Javadoc)
-     * @see org.md.crossword.gui.GtTableCellRenderer#getTableCellRendererComponent(javax.swing.JTable, java.lang.Object, boolean, boolean, int, int)
+     * @see org.md.crossword.gui.MyTableCellRenderer#getTableCellRendererComponent(javax.swing.JTable, java.lang.Object, boolean, boolean, int, int)
      */
     @Override
     public Component getTableCellRendererComponent(JTable table, Object value,

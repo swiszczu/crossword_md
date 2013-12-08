@@ -21,11 +21,11 @@ public class CrosswordTable extends JTable {
     /**
      * The gt cell render.
      */
-    GtTableCellRenderer gtCellRender = new GtTableCellRenderer();
+    MyTableCellRenderer gtCellRender = new MyTableCellRenderer();
     /**
      * The gt empty cell render.
      */
-    GtTableCellRenderer gtEmptyCellRender = new GtTableEmptyCellRenderer();
+    MyTableCellRenderer gtEmptyCellRender = new MyTableEmptyCellRenderer();
 
     /**
      * Instantiates a new crossword table.
@@ -42,7 +42,7 @@ public class CrosswordTable extends JTable {
         setPreferredScrollableViewportSize(new Dimension(600, 400));
         this.setPreferredSize(new Dimension(600, 400));
         setFillsViewportHeight(true);
-        setDefaultRenderer(Boolean.class, new GtTableCellRenderer());
+        setDefaultRenderer(Boolean.class, new MyTableCellRenderer());
         setIntercellSpacing(new Dimension(1, 1));
         setShowGrid(false);
         for (int i = this.getColumnCount() - 1; i >= 0; i--) {
