@@ -13,7 +13,7 @@ import java.awt.*;
 // TODO: Auto-generated Javadoc
 /**
  * Created with Eclipse
- * User: Marcin D�ugosz
+ * User: Marcin Długosz
  * Date: 29.11.13
  * Time: 11:43
  * To change this template use File | Settings | File Templates.
@@ -68,7 +68,7 @@ public class CrosswordTable extends JTable {
     @Override
     public TableCellEditor getCellEditor(int row, int col)
     {
-        //@TODO: Jak wpisujemy litere to żeby czyściło przed tym pole
+        //@TODO: Jak wpisujemy litere to ĹĽeby czyĹ›ciĹ‚o przed tym pole
 
         JTextField cellEditor=new JTextField(1);
         cellEditor.setDocument(new JTextFieldLimit(1));
