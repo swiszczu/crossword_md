@@ -1,4 +1,7 @@
 crossword_md
 ============
 
-Projekt krzyżówki dla MWypych
+- Projekt krzyżówki dla MWypych
+
+- Budowanie projekty:
+	$gradle build
