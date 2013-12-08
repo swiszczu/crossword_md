@@ -14,7 +14,7 @@ import org.md.crossword.dictionary.InteliCwDB;
  * 
  */
 /**
- * @author Marcin D³ugosz
+ * @author Marcin DÅ‚ugosz
  *
  */
 public class CrossStrategy extends Strategy {

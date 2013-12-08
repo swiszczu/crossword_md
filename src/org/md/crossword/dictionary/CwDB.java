@@ -108,8 +108,7 @@ public class CwDB implements Serializable {
 	 */
 	protected void createDB(String filename) {
 		try {
-      new InputStreamReader(new FileInputStream(filename), "UTF-8"));
-       
+    BufferedReader in = new BufferedReader( new InputStreamReader(new FileInputStream(filename), "UTF-8"));
 			try {
 				String word, clue;
 				while ((word = in.readLine()) != null
