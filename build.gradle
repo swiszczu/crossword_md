@@ -1,0 +1,60 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+javadoc.enabled = true
+sourceSets.main.java.srcDirs =
+  ["/CrossWord_Dlugosz/src"]
+  
+tasks.withType(JavaCompile) {
+  options.encoding = "utf-8" // adapt as necessary
+} 
+buildscript {
+  repositories { mavenCentral() }
+tasks.withType(JavaCompile) {
+  options.encoding = "utf-8" // adapt as necessary
+}
+  dependencies {
+    classpath 'org.ajoberstar:gradle-git:0.6.3'
+  }
+}
+
+import org.ajoberstar.gradle.git.tasks.*
+
+repositories { mavenCentral() }
+dependencies {
+  compile 'com.lowagie:itext:2.1.7'
+}
+
+task cloneGitRepo(type: GitClone) {
+        def destination = file("./CrossWord_Dlugosz")
+        uri = "https://github.com/swiszczu/crossword_md.git"
+        destinationPath = destination
+        bare = false
+        enabled = !destination.exists()
+}
+
+task copyToLib(type: Copy) {
+    into "$buildDir/output/libs"
+    from configurations.runtime
+}
+
+task finalizeCopy(type: Copy) {
+      from("CrossWord_Dlugosz") {
+          include "cwdb.txt"
+      }
+      from "$buildDir/libs"
+      into "$buildDir/output"
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'org.md.crossword.app.Progr', 'Class-Path' : 'libs/itext-2.1.7.jar'
+    }
+}
+javadoc {
+    println "generuje javadoc"
+    source = sourceSets.main.allJava
+    classpath = configurations.compile
+    destinationDir = file("./build/doc")
+  }
+compileJava.dependsOn cloneGitRepo,javadoc
+build.dependsOn copyToLib,finalizeCopy

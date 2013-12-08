@@ -42,10 +42,10 @@ public class CwBrowser {
     }
 
     /**
-     * Save org.md.crossword to the file, return an unique handler.
+     * Save org.md.crossword to the file.
      *
      * @param cw Crossword to store
-     * @return Unique id of the stored org.md.crossword, can be used to load org.md.crossword
+     * 
      * @throws IOException Signals that an I/O exception has occurred.
      */
     public void save(Crossword cw) throws IOException {
